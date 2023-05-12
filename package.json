@@ -2,6 +2,7 @@
 	"private": true,
 	"version": "0.0.0",
 	"scripts": {
+		"build": "wrangler build",
 		"deploy": "wrangler publish",
 		"dev": "wrangler dev --local"
 	},

@@ -1,9 +1,27 @@
-name = "" # todo
+name = "blucket"
 main = "build/worker/shim.mjs"
 compatibility_date = "2022-01-20"
+workers_dev = true
 
 [vars]
 WORKERS_RS_VERSION = "0.0.11"
 
 [build]
-command = "cargo install -q worker-build --version 0.0.7 && worker-build --release"
+command = "cargo install --git https://github.com/CathalMullan/workers-rs worker-build && worker-build --release"
+# command = "cargo install -q worker-build --version 0.0.7 && worker-build --release"
+
+[[r2_buckets]]
+binding = 'BLOCKSTORE'
+bucket_name = 'bucket'
+#  TODO: Wrtie docs on how to set up a preview bucket.
+preview_bucket_name = 'blockstore'
+
+
+# # Staging environment.
+# [env.staging]
+# name = "blucket-staging"
+# account_id = "3648328bb7b24838c70d601e79891d98" # Banyan Cloudfare account
+
+# [[env.staging.r2_buckets]]
+# bucket_name = "blockstore-staging"
+# binding = "BLOCKSTORE"

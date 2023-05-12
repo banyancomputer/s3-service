@@ -33,6 +33,9 @@ $ npm run build
 # run your Worker in an ideal development workflow (with a local server, file watcher & more)
 $ npm run dev
 
+# While dev is running, you can run integration tests with
+$ cargo test
+
 # deploy your Worker globally to the Cloudflare network (update your wrangler.toml file for configuration)
 $ npm run deploy
 ```
